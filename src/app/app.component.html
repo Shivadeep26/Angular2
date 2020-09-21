@@ -1,0 +1,42 @@
+﻿<div>
+    <h1>
+        {{getFullName()}}
+        <br />
+        <img [src]='imgPath' />
+        <br />
+        <button [disabled]="isDisabled">Click Me</button>
+        <br />
+        <button class="colorClass" [class]="classToApply">My Button</button>
+        <br />
+        <button class="colorClass italicClass boldClass" [class.boldClass]="applyBoldClass">My Button</button>
+        <br />
+        <button class="colorClass italicClass boldClass" [ngClass]="addClasses()">My Button</button>
+        <br />
+        <button  [ngStyle]="addStyles()">My Button</button>
+        <br />
+        <button (click)="onClick()">Click Me</button>
+        <input [(ngModel)]="name" />
+        <br />
+        Your Name : {{name}}
+    </h1>
+
+    <input type="text" [(ngModel)]="stringEntered"/>
+    <simple [userInput]="stringEntered"></simple>
+    <br/>
+
+   
+    <div style="padding:5px">
+        <ul class="nav nav-tabs">
+            <li routerLinkActive="active">
+                <a routerLink="home">Home</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="employees">Employee</a>
+            </li>
+        </ul>
+        <br />
+        <router-outlet></router-outlet>
+    </div>
+    <!--<list-employee></list-employee>-->
+
+</div>

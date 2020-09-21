@@ -1,0 +1,55 @@
+﻿<div *ngIf="!employee">
+    {{statusMessage}}
+</div>
+
+<table *ngIf="employee">
+    <thead>
+        <tr>
+            <th [attr.colspan]="columnSpan">
+                Employee Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Code:
+            </td>
+            <td>
+                {{employee.Code}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Name:
+            </td>
+            <td>
+                {{employee.Name}}
+            </td>
+        </tr>
+        <tr >
+            <td>
+                Gender:
+            </td>
+            <td>
+                {{employee.Gender}}
+            </td>
+        </tr>
+        <tr >
+            <td>
+                Salary:
+            </td>
+            <td>
+                {{employee.Salary}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<div style="margin-top:5px;">
+    <input type="button" class="btn btn-primary" value="Back to EmployeeList" (click)="onBackButtonClick()"/>
+</div>
+<div style="margin-top:5px;" *ngIf="!subscription.closed">
+    <input type="button" class="btn btn-primary" value="Cancel Request" (click)="onCancelButtonClick()" />
+</div>
+
